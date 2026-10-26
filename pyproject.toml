@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+[project]
+name = "multi-db-query-engine"
+version = "1.1.2"
+description = "Object-oriented Python SDK for natural-language multi-database queries"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.8,<3", "pydantic-settings>=2.4,<3"]
+[project.optional-dependencies]
+dev = ["pytest>=8.2,<9", "pytest-cov>=5,<7", "pytest-asyncio>=0.24,<2", "ruff>=0.6,<1", "build>=1.2,<2"]
+ai = ["openai>=1.40,<3"]
+postgres = ["psycopg[binary]>=3.2,<4"]
+mysql = ["pymysql>=1.1,<2"]
+mongodb = ["pymongo>=4.8,<5"]
+redis = ["redis>=5,<7"]
+all-databases = ["openai>=1.40,<3", "psycopg[binary]>=3.2,<4", "pymysql>=1.1,<2", "pymongo>=4.8,<5", "redis>=5,<7"]
+[tool.hatch.build.targets.wheel]
+packages = ["multi_db_query_engine"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+asyncio_mode = "auto"
+[tool.ruff]
+line-length = 100
+target-version = "py311"

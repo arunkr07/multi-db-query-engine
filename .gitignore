@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environments
+.venv/
+.venv*/
+venv/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Local databases and generated data
+*.db
+*.sqlite
+*.sqlite3
+
+# Testing and linting
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Build artifacts
+build/
+dist/
+
+# Local audit and debugging files
+audit_project.zip
+audit_bundle*.txt
+audit_files.txt
+debug_ai.py
+final_audit.py
+fix_lint.py
+test_approval_flow.py
